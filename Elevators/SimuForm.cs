@@ -16,8 +16,8 @@ namespace Elevators
         {
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.MinimumSize = new Size(800, 600);
-            this.MaximumSize = new Size(800, 600);
+            this.MinimumSize = new Size(1024, 768);
+            this.MaximumSize = new Size(1024, 768);
             InitializeComponent();
         }
 
@@ -32,6 +32,32 @@ namespace Elevators
         }
 
         private void button13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Form formSettings = new SettingsForm();
+            formSettings.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

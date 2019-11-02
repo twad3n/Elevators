@@ -31,5 +31,10 @@ namespace Elevators
         {
             radioButton1.Checked = true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -34,5 +34,10 @@ namespace Elevators
             //this.Hide();
             formSettings.ShowDialog();
         }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
