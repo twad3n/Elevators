@@ -26,6 +26,7 @@ namespace Elevators
             Form formSimu = new SimuForm();
             this.Hide();
             formSimu.ShowDialog();
+            Application.ExitThread();
         }
 
         private void button1_Click(object sender, EventArgs e)

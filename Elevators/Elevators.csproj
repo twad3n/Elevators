@@ -58,7 +58,6 @@
     <Compile Include="MicroSettingsForm.Designer.cs">
       <DependentUpon>MicroSettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
     <Compile Include="SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
