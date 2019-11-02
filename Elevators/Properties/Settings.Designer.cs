@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Building.Properties
+namespace Elevators.Properties
 {
 
 
