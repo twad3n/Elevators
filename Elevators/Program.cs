@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Elevators.Presenters;
+using Elevators.Views;
+using Elevators.Models;
+using Ninject;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
 
 namespace Elevators
 {
@@ -17,12 +19,24 @@ namespace Elevators
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Form formMenu = new MenuForm();
+
+            //Ninject.StandardKernel kernel = new StandardKernel();
+            //kernel.Bind<SettingsView>().To<ISettingsPresenter>();
+            
+
+            Form mainMenu = new MainView();
+            Form settingsMenu = new SettingsView();
+            Form scenarioMenu = new ScenarioView();
+
+            //MainPresenter mainPresenter = new MainPresenter(mainMenu);
+
+            //mainMenu.Show();
            
-            Application.Run(formMenu);
+            Application.Run(mainMenu);
         }
     }
 
