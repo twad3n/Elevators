@@ -10,8 +10,9 @@ namespace Elevators.Presenters
 {
     public interface ISettingsPresenter: IPresenter
     {
+        event Delegates.GoToScenario GoToScenario;
 
-        void Run();
         void Show();
+        void Close();
     }
 }

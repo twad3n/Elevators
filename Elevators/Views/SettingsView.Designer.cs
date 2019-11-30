@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button9 = new System.Windows.Forms.Button();
+            this.scenarioSettingsButton = new System.Windows.Forms.Button();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.exportSettingsButton = new System.Windows.Forms.Button();
+            this.importSettingButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -43,16 +43,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button9
+            // scenarioSettingsButton
             // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.Location = new System.Drawing.Point(189, 136);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(76, 47);
-            this.button9.TabIndex = 34;
-            this.button9.Text = "Change";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.scenarioSettingsButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.scenarioSettingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.scenarioSettingsButton.Location = new System.Drawing.Point(189, 136);
+            this.scenarioSettingsButton.Name = "scenarioSettingsButton";
+            this.scenarioSettingsButton.Size = new System.Drawing.Size(76, 47);
+            this.scenarioSettingsButton.TabIndex = 34;
+            this.scenarioSettingsButton.Text = "Change";
+            this.scenarioSettingsButton.UseVisualStyleBackColor = true;
+            this.scenarioSettingsButton.Click += new System.EventHandler(this.button9_Click);
             // 
             // radioButton2
             // 
@@ -76,25 +77,25 @@
             this.radioButton1.Text = "minimal idling mode";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // exportSettingsButton
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(492, 127);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(109, 46);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Export";
-            this.button3.UseVisualStyleBackColor = true;
+            this.exportSettingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exportSettingsButton.Location = new System.Drawing.Point(492, 127);
+            this.exportSettingsButton.Name = "exportSettingsButton";
+            this.exportSettingsButton.Size = new System.Drawing.Size(109, 46);
+            this.exportSettingsButton.TabIndex = 26;
+            this.exportSettingsButton.Text = "Export";
+            this.exportSettingsButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // importSettingButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(492, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 46);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Import";
-            this.button1.UseVisualStyleBackColor = true;
+            this.importSettingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.importSettingButton.Location = new System.Drawing.Point(492, 70);
+            this.importSettingButton.Name = "importSettingButton";
+            this.importSettingButton.Size = new System.Drawing.Size(109, 46);
+            this.importSettingButton.TabIndex = 24;
+            this.importSettingButton.Text = "Import";
+            this.importSettingButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -174,7 +175,7 @@
             this.label3.Text = "Strategy:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // SettingsForm
+            // SettingsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -184,16 +185,16 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(this.scenarioSettingsButton);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.exportSettingsButton);
+            this.Controls.Add(this.importSettingButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "SettingsForm";
+            this.Name = "SettingsView";
             this.Text = "Elevators";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.ResumeLayout(false);
@@ -202,11 +203,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button scenarioSettingsButton;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button exportSettingsButton;
+        private System.Windows.Forms.Button importSettingButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;

@@ -11,15 +11,23 @@ using System.Windows.Forms;
 
 namespace Elevators.Views
 {
-    public partial class ScenarioView : Form, IScenarioView, IScenarioPresenter
+    public partial class ScenarioView : Form, IScenarioView
     {
-        public ScenarioView()
+        private ApplicationContext _context;
+        public ScenarioView(ApplicationContext context)
         {
+            _context = context;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimumSize = new Size(400, 500);
             this.MaximumSize = new Size(400, 500);
             InitializeComponent();
+        }
+
+        public new void Show()
+        {
+            _context.MainForm = this;
+            base.Show();
         }
 
         private void ScenarioView_Load(object sender, EventArgs e)
@@ -43,7 +51,7 @@ namespace Elevators.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -64,11 +72,6 @@ namespace Elevators.Views
 
         }
         public void Export()
-        {
-
-        }
-
-        public void Show()
         {
 
         }

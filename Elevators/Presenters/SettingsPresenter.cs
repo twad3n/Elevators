@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Elevators.Views;
 
 namespace Elevators.Presenters
 {
-    public class SettingsPresenter: ISettingsPresenter
+    public class SettingsPresenter
     {
-        public IMainPresenter _mainMenu;
-        public ISettingsPresenter _settingsMenu;
-        public IKernel _kernel;
+        private IKernel _kernel;
+        private ISettingsView _view;
 
-        //public event Action GoToSettings;
+        public event Delegates.GoToScenario GoToScenario;
 
 
-        public SettingsPresenter(IKernel kernel, ISettingsPresenter settingsMenu, IMainPresenter mainMenu)
+        public SettingsPresenter(IKernel kernel, ISettingsView view)
         {
-            _settingsMenu = settingsMenu;
             _kernel = kernel;
-            _mainMenu = mainMenu;
+            _view = view;
 
+            _view.GoToScenario += _view_GoToScenario;
         }
 
+        private void _view_GoToScenario()
+        {
+            _kernel.Get<ScenarioPresenter>().Run();
+        }
 
         public void Show()
         {
@@ -31,7 +35,12 @@ namespace Elevators.Presenters
         }
         public void Run()
         {
-            _settingsMenu.Show();
+            _view.Show();
+            //_settingsMenu.Show();
+        }
+        public void Close()
+        {
+
         }
     }
 }

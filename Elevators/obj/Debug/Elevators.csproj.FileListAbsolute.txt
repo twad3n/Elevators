@@ -11,3 +11,16 @@ C:\Users\rhode\OneDrive\Desktop\VS Builds\Elevators-master\Elevators\obj\Debug\E
 C:\Users\rhode\OneDrive\Desktop\VS Builds\Elevators-master\Elevators\obj\Debug\Elevators.pdb
 C:\Users\rhode\OneDrive\Desktop\VS Builds\Elevators-master\Elevators\obj\Debug\Elevators.Views.ScenarioView.resources
 C:\Users\rhode\OneDrive\Desktop\VS Builds\Elevators-master\Elevators\obj\Debug\Elevators.Views.SettingsView.resources
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\bin\Debug\Elevators.exe.config
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\obj\Debug\Elevators.exe
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\obj\Debug\Elevators.pdb
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\bin\Debug\Elevators.exe
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\bin\Debug\Elevators.pdb
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\bin\Debug\Ninject.dll
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\bin\Debug\Ninject.xml
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\obj\Debug\Elevators.Views.ScenarioView.resources
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\obj\Debug\Elevators.Views.SettingsView.resources
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\obj\Debug\Elevators.Views.MainView.resources
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\obj\Debug\Elevators.Properties.Resources.resources
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\obj\Debug\Elevators.csproj.GenerateResource.Cache
+C:\ШАРПЫ\Валенда\Elevators-MVP\Elevators-MVP\Elevators\obj\Debug\Elevators.csprojResolveAssemblyReference.cache

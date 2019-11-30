@@ -32,8 +32,10 @@ namespace Elevators
             kernel.Bind<ApplicationContext>().ToConstant(new ApplicationContext());
             kernel.Bind<IMainPresenter>().To<MainView>();
             kernel.Bind<MainPresenter>().ToSelf();
-            kernel.Bind<ISettingsPresenter>().To<SettingsPresenter>();
+            kernel.Bind<ISettingsView>().To<SettingsView>();
             kernel.Bind<SettingsPresenter>().ToSelf();
+            kernel.Bind<IScenarioView>().To<ScenarioView>();
+            //kernel.Bind<SettingsPresenter>().ToSelf();
 
 
             kernel.Get<MainPresenter>().Run();

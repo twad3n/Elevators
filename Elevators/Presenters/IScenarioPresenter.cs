@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Elevators.Presenters
 {
-    public interface IScenarioPresenter
+    public interface IScenarioPresenter : IPresenter
     {
 
+        void Show();
     }
 }

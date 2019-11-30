@@ -13,6 +13,8 @@ namespace Elevators.Presenters
     }
     public static class Delegates
     {
+        public delegate void GoToScenario();
+
         public delegate void GoToSettings();
     }
 }

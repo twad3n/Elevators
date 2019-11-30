@@ -11,9 +11,10 @@ using System.Windows.Forms;
 
 namespace Elevators.Views
 {
-    public partial class SettingsView : Form, ISettingsView
+    public partial class SettingsView : Form, ISettingsView, ISettingsPresenter
     {
         private ApplicationContext _context;
+
         public SettingsView(ApplicationContext context)
         {
             _context = context;
@@ -24,6 +25,9 @@ namespace Elevators.Views
             InitializeComponent();
         }
 
+
+        public event Delegates.GoToScenario GoToScenario;
+
         public new void Show()
         {
             _context.MainForm = this;
@@ -32,6 +36,7 @@ namespace Elevators.Views
 
         private void button9_Click(object sender, EventArgs e)
         {
+            GoToScenario?.Invoke();
             //Form formMicroSettings = new MicroSettingsView();
             //formMicroSettings.ShowDialog();
         }
@@ -43,7 +48,7 @@ namespace Elevators.Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+          
         }
 
         private void label3_Click(object sender, EventArgs e)
