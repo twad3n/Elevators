@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Elevators.Models
 {
-    public interface IOperatorService
+    public interface IOperatorService: IMan, IElevator
     {
-        //and here
+        //
+        
     }
 }

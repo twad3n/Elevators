@@ -210,6 +210,7 @@
             this.openSettingsButton.TabIndex = 22;
             this.openSettingsButton.Text = "Settings";
             this.openSettingsButton.UseVisualStyleBackColor = false;
+            this.openSettingsButton.Click += new System.EventHandler(this.openSettingsButton_Click);
             // 
             // button3
             // 

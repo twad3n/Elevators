@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Elevators.Views
+namespace Elevators.Models
 {
-    public interface IMainView: IBasicView
+    public interface IMainViewService
     {
-        void Show();
     }
 }

@@ -8,7 +8,10 @@ using Elevators.Models;
 
 namespace Elevators.Presenters
 {
-    public interface ISettingsPresenter
+    public interface ISettingsPresenter: IPresenter
     {
+
+        void Run();
+        void Show();
     }
 }

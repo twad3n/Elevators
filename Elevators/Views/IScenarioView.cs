@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Elevators.Views
 {
-    interface IScenarioView
+    public interface IScenarioView: IBasicView
     {
+        void Save();
+        void Discard();
+        void Import();
+        void Export();
+
+        void Show();
+
     }
 }

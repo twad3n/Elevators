@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Elevators.Views
 {
-    public interface IMainView: IBasicView
+    public interface IBasicView
     {
         void Show();
     }

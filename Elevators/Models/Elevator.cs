@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Elevators.Models
 {
-    class Elevator: BasicEntity, IElevator
+    public class Elevator: BasicEntity, IElevator
     {
         public UInt32 ID
         {
@@ -32,6 +32,7 @@ namespace Elevators.Models
                 floorPosition = value;
             }
         }
+
         public int numberOfJobs;
 
         public Elevator(UInt32 ID)

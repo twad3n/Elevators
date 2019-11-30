@@ -5,16 +5,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Elevators.Views;
+using Ninject;
 
 namespace Elevators.Presenters
 {
     public class MainPresenter: IMainPresenter
     {
-        private MainView _mainView;
+        public IMainPresenter _mainView;
+        public IKernel _kernel;
 
-        MainPresenter (MainView mainMenu)
+        public event Delegates.GoToSettings GoToSettings;
+
+        public MainPresenter (IKernel kernel, IMainPresenter mainMenu)
         {
-            this._mainView = mainMenu;
+            _mainView = mainMenu;
+            _kernel = kernel;
+
+            _mainView.GoToSettings += _mainView_GoToSettings;
+        }
+
+        private void _mainView_GoToSettings()
+        {
+            _kernel.Get<SettingsPresenter>().Run();
+        }
+
+        public void ShowSettingsMenu()
+        {
+            _kernel.Get<SettingsPresenter>().Run();
+            //_mainView.Close();
+        }
+
+
+
+        public void Show()
+        {
+            _kernel.Get<MainPresenter>().Run();
         }
 
         public void Run()

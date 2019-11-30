@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\BasicEntity.cs" />
+    <Compile Include="Models\IMainViewService.cs" />
+    <Compile Include="Models\MainViewService.cs" />
     <Compile Include="Models\Repositories\ElevatorRepository.cs" />
     <Compile Include="Models\IControllerService.cs" />
     <Compile Include="Models\IElevator.cs" />
@@ -81,12 +83,14 @@
     <Compile Include="Models\Repositories\ManRepository.cs" />
     <Compile Include="Presenters\IMainPresenter.cs" />
     <Compile Include="Presenters\IOperatorPresenter.cs" />
+    <Compile Include="Presenters\IPresenter.cs" />
     <Compile Include="Presenters\IScenarioPresenter.cs" />
     <Compile Include="Presenters\ISettingsPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Presenters\OperatorPresenter.cs" />
     <Compile Include="Presenters\ScenarioPresenter.cs" />
     <Compile Include="Presenters\SettingsPresenter.cs" />
+    <Compile Include="Views\IBasicView.cs" />
     <Compile Include="Views\IMainView.cs" />
     <Compile Include="Views\IScenarioView.cs" />
     <Compile Include="Views\ISettingsView.cs" />
@@ -129,6 +133,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

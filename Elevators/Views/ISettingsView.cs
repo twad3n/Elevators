@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Elevators.Views
 {
-    interface ISettingsView
+    public interface ISettingsView: IBasicView
     {
+        void Save();
+        void Discard();
+        void Import();
+        void Export();
+
+        void Show();
     }
 }

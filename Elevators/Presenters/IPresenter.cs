@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Elevators.Views
+namespace Elevators.Presenters
 {
-    public interface IMainView: IBasicView
+    public interface IPresenter
     {
         void Show();
+
+    }
+    public static class Delegates
+    {
+        public delegate void GoToSettings();
     }
 }

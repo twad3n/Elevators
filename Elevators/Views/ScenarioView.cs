@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Elevators.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Elevators.Views
 {
-    public partial class ScenarioView : Form, IScenarioView
+    public partial class ScenarioView : Form, IScenarioView, IScenarioPresenter
     {
         public ScenarioView()
         {
@@ -21,7 +22,7 @@ namespace Elevators.Views
             InitializeComponent();
         }
 
-        private void MicroSettingsForm_Load(object sender, EventArgs e)
+        private void ScenarioView_Load(object sender, EventArgs e)
         {
             dataGridView1.Rows.Add("1");
             dataGridView1.Rows.Add("2");
@@ -46,6 +47,28 @@ namespace Elevators.Views
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void Save()
+        {
+
+        }
+        public void Discard()
+        {
+
+        }
+        public void Import()
+        {
+
+        }
+        public void Export()
+        {
+
+        }
+
+        public void Show()
         {
 
         }

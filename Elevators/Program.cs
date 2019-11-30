@@ -2,6 +2,7 @@
 using Elevators.Views;
 using Elevators.Models;
 using Ninject;
+using Ninject.Modules;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -23,20 +24,26 @@ namespace Elevators
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            //Form mainMenu = new MainView();
+            //Form settingsMenu = new SettingsView();
+            //Form scenarioMenu = new ScenarioView();
 
-            //Ninject.StandardKernel kernel = new StandardKernel();
-            //kernel.Bind<SettingsView>().To<ISettingsPresenter>();
-            
+            Ninject.StandardKernel kernel = new StandardKernel();
+            kernel.Bind<ApplicationContext>().ToConstant(new ApplicationContext());
+            kernel.Bind<IMainPresenter>().To<MainView>();
+            kernel.Bind<MainPresenter>().ToSelf();
+            kernel.Bind<ISettingsPresenter>().To<SettingsPresenter>();
+            kernel.Bind<SettingsPresenter>().ToSelf();
 
-            Form mainMenu = new MainView();
-            Form settingsMenu = new SettingsView();
-            Form scenarioMenu = new ScenarioView();
 
-            //MainPresenter mainPresenter = new MainPresenter(mainMenu);
+            kernel.Get<MainPresenter>().Run();
+            Application.Run(kernel.Get<ApplicationContext>());
+
+
 
             //mainMenu.Show();
-           
-            Application.Run(mainMenu);
+
+            //Application.Run(mainMenu);
         }
     }
 

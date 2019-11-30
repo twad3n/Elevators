@@ -10,6 +10,17 @@ namespace Elevators.Models
     public class ManRepository: IManRepository
     {
         private List<Man> manContext = new List <Man>(20);
-            
+
+        public IManRepository IManRepository
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
     }
 }
