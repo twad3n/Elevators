@@ -11,3 +11,6 @@ C:\Users\rhode\OneDrive\Desktop\VS Builds\Elevators-master\Elevators\obj\Debug\E
 C:\Users\rhode\OneDrive\Desktop\VS Builds\Elevators-master\Elevators\obj\Debug\Elevators.pdb
 C:\Users\rhode\OneDrive\Desktop\VS Builds\Elevators-master\Elevators\obj\Debug\Elevators.Views.ScenarioView.resources
 C:\Users\rhode\OneDrive\Desktop\VS Builds\Elevators-master\Elevators\obj\Debug\Elevators.Views.SettingsView.resources
+C:\ШАРПЫ\ElevatorTP\Elevators\Elevators\bin\Debug\Elevators.exe.config
+C:\ШАРПЫ\ElevatorTP\Elevators\Elevators\obj\Debug\Elevators.exe
+C:\ШАРПЫ\ElevatorTP\Elevators\Elevators\obj\Debug\Elevators.pdb
