@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Elevators.Models.Services
 {
-    class ControllerService
+    class ControllerService: IControllerService
     {
         ManRepository _manRepository;
         ElevatorRepository _elevatorRepository;

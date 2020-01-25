@@ -37,6 +37,8 @@ namespace Elevators
             kernel.Bind<ScenarioPresenter>().ToSelf();
             kernel.Bind<IOperatorService>().To<OperatorService>();
             kernel.Bind<ISettingsService>().To<SettingsService>();
+            kernel.Bind<Settings>().ToSelf();
+            kernel.Bind<IControllerService>().To<ControllerService>();
             //kernel.Bind<IRepository<SettingsRepository>>().To<CharacterRepository>();
             //kernel.Bind<OperatorPresenter>().ToSelf();
 

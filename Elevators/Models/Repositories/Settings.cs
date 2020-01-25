@@ -11,7 +11,12 @@ namespace Elevators.Models.Repositories
         public int numberOfFloors;
         public int numberOfElevators;
 
-        int strategy;
+
+        /*public Settings(int _numberOfFloors, int _numberOfElevators)
+        {
+            numberOfFloors = _numberOfFloors;
+            numberOfElevators = _numberOfElevators;
+        }*/
 
     }
 }

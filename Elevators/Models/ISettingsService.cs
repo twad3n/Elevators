@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Elevators.Models.Repositories;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,8 +13,7 @@ namespace Elevators.Models
     {
 
         //IEnumerable<string> GetAllCharacters();
-        void ImportSettings(StreamReader reader);
-        void ExportSettings(StreamWriter writer);
-
+        Settings ImportSettings(StreamReader reader);
+        void ExportSettings(StreamWriter writer, Settings settings);
     }
 }

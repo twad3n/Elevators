@@ -8,30 +8,8 @@ namespace Elevators.Models
 {
     public class Man: BasicEntity
     {
-        public int ID
-        {
-            get
-            {
-                return this.ID;
-            }
-
-            set
-            {
-                this.ID = value;
-            }
-        }
-
-        public int currentFloor
-        {
-            get
-            {
-                return currentFloor;
-            }
-            set
-            {
-                currentFloor = value;
-            }
-        }
+        public int ID;
+        public int currentFloor;
 
 
         public Man(int id, int floor)

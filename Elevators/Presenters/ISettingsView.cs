@@ -16,8 +16,9 @@ namespace Elevators.Views
         event Action<int, int> SettingsChanged;
         event Action<string> ImportSettings;
         event Action<string> ExportSettings;
+        event Action SettingsUpdated;
 
-
+        void UpdateSettingsField(Settings settings);
         void Show();
         void Close();
     }

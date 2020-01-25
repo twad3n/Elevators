@@ -8,6 +8,7 @@ namespace Elevators.Views
 {
     public interface IBasicView
     {
+
         void Show();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Elevators.Models;
+using Elevators.Models.Repositories;
 using Elevators.Presenters;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,9 @@ namespace Elevators.Views
         private readonly ApplicationContext _context;
         public MainView(ApplicationContext context)
         {
+            _settings = new Settings();
+            _settings.numberOfElevators = 1;
+            _settings.numberOfFloors = 1;
             _context = context;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -25,10 +29,13 @@ namespace Elevators.Views
             InitializeComponent();
         }
 
-        private int numberOfFloors = 4;
-        private int numberOfElevators = 1;
-        private List<Button> floorsIconsArray = new List<Button>(5);
-        private List<PictureBox> elevatorsIconsArray = new List<PictureBox>(5);
+        //private List<Button> floorsIconsArray = new List<Button>(5);
+        //private List<PictureBox> elevatorsIconsArray = new List<PictureBox>(5);
+        private Settings _settings;
+        private int x;
+        private int y;
+        private int height;
+
 
         public event Action GoToSettings;
         public event Action Start;
@@ -36,6 +43,7 @@ namespace Elevators.Views
         public event Action Stop;
         public event Action AddMan;
         public event Action MoveUpABit;
+        public event Action MoveDownABit;
 
         public new void Show()
         {
@@ -44,23 +52,31 @@ namespace Elevators.Views
             base.Show();
         }
 
+        public void GetSettings(Settings settings)
+        {
+            _settings = settings;
+        }
+
         private void InitializeScene()
         {
-            int x = field.Location.X - 80;
-            int y = field.Location.Y + field.Size.Height;
-            int height = field.Size.Height / numberOfFloors;
+            field.SendToBack();
+            x = field.Location.X - 80;
+            y = field.Location.Y + field.Size.Height;
+            height = field.Size.Height / _settings.numberOfFloors;
 
-            for (int i = 0; i < numberOfElevators; i++)
+            for (int i = 0; i < _settings.numberOfElevators; i++)
             {
                 PictureBox elevatorPic = new PictureBox();
-                elevatorPic.BackgroundImage = elevator.BackgroundImage;
+                elevatorPic.Image = elevator.Image;
+                elevatorPic.SizeMode = PictureBoxSizeMode.Zoom;
                 elevatorPic.Size = new Size(100, height);
-                elevatorPic.Location = new Point(x + 30 + (i * 40), y - height);
+                elevatorPic.Location = new Point(x + 80 + (i * 140), y - height);
+                
                 Controls.Add(elevatorPic);
 
             }
 
-                for (int i = 0; i < numberOfFloors; i++)
+                for (int i = 0; i < _settings.numberOfFloors; i++)
             {
                 Button floorBtn = new Button();
                 floorBtn.Font = floorIconBase.Font;
@@ -69,16 +85,38 @@ namespace Elevators.Views
                 floorBtn.BackColor = Color.White;
                 floorBtn.Enabled = false;
                 floorBtn.Text = (i + 1).ToString();
-                floorsIconsArray.Add(floorBtn);
                 Controls.Add(floorBtn);
             }
         }
 
 
+        public void _AddMan(Man man)
+        {
+            PictureBox manPic = new PictureBox();
+            manPic.Image = pictureMan.Image;
+            manPic.SizeMode = PictureBoxSizeMode.Zoom;
+            manPic.Size = new Size(100, height);
+            manPic.Location = new Point(x + 80, y - height);
+
+            Controls.Add(manPic);
+        }
 
         public void _MoveUpElevator()
         {
-            elevator.Location = new Point(elevator.Location.X, elevator.Location.Y - 80);
+            foreach (var c in Controls.OfType<PictureBox>())
+            {
+                if (c.Image == elevator.Image && c.Location.Y > field.Location.Y + 4) 
+                    c.Location = new Point(c.Location.X, c.Location.Y - field.Size.Height / _settings.numberOfFloors);
+            }
+        }
+
+        public void _MoveDownElevator()
+        {
+            foreach (var c in Controls.OfType<PictureBox>())
+            {
+                if (c.Image == elevator.Image && c.Location.Y < field.Location.Y + field.Height - height)
+                    c.Location = new Point(c.Location.X, c.Location.Y + field.Size.Height / _settings.numberOfFloors);
+            }
         }
 
         private void openSettingsButton_Click(object sender, EventArgs e)
@@ -94,6 +132,11 @@ namespace Elevators.Views
         private void clickMe_Click(object sender, EventArgs e)
         {
             MoveUpABit?.Invoke();
+        }
+
+        private void dontClickMe_Click(object sender, EventArgs e)
+        {
+            MoveDownABit?.Invoke();
         }
     }
 }

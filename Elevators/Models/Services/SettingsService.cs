@@ -12,28 +12,24 @@ namespace Elevators.Models.Services
     public class SettingsService: ISettingsService
     {
 
-        private Settings _repository;
+        private Settings settings;
         private JsonSerializer _serializer;
         public SettingsService(Settings repository)
         {
-            _repository = repository;
+            settings = repository;
             _serializer = new JsonSerializer();
         }
 
-        public void ImportSettings(StreamReader reader)
+        public Settings ImportSettings(StreamReader reader)
         {
-            List<Settings> settings = (List<Settings>)_serializer.Deserialize(reader, typeof(List<Settings>));
-            foreach (var c in settings)
-            {
-                _repository = c;
-            }
-
-            //CharacterUpdated?.Invoke();
+            var jsonTextReader = new JsonTextReader(reader);
+            return (Settings)_serializer.Deserialize<Settings>(jsonTextReader) as Settings;
         }
 
-        public void ExportSettings(StreamWriter writer)
+        public void ExportSettings(StreamWriter writer, Settings settings)
         {
-            _serializer.Serialize(writer, _repository);
+            this.settings = settings;
+            _serializer.Serialize(writer, this.settings);
         }
 
 

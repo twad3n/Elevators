@@ -74,11 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Entities\BasicEntity.cs" />
+    <Compile Include="Models\IControllerService.cs" />
     <Compile Include="Models\IOperatorService.cs" />
     <Compile Include="Models\ISettingsService.cs" />
     <Compile Include="Models\Repositories\Settings.cs" />
     <Compile Include="Models\Services\ControllerService.cs" />
-    <Compile Include="Models\Services\MainViewService.cs" />
     <Compile Include="Models\Repositories\ElevatorRepository.cs" />
     <Compile Include="Models\Services\OperatorService.cs" />
     <Compile Include="Models\Entities\Man.cs" />

@@ -26,12 +26,38 @@ namespace Elevators.Views
             InitializeComponent();
         }
 
+        private const int CP_NOCLOSE_BUTTON = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                return myCp;
+            }
+        }
 
         public event Action GoToScenario;
         public event Action ApplySettings;
         public event Action<int, int> SettingsChanged;
         public event Action<string> ImportSettings;
         public event Action<string> ExportSettings;
+        public event Action SettingsUpdated;
+
+        public void UpdateSettingsField(Settings settings)
+        {
+            try
+            {
+                textBox1.Text = Convert.ToString(settings.numberOfFloors);
+                textBox1.Text = settings.numberOfFloors.ToString();
+                textBox2.Text = Convert.ToString(settings.numberOfElevators);
+                textBox2.Text = settings.numberOfElevators.ToString();
+            }
+            catch (Exception exept)
+            {
+                MessageBox.Show("oshibka");
+            }
+        }
 
         public new void Show()
         {
@@ -42,8 +68,6 @@ namespace Elevators.Views
         private void button9_Click(object sender, EventArgs e)
         {
             GoToScenario?.Invoke();
-            //Form formMicroSettings = new MicroSettingsView();
-            //formMicroSettings.ShowDialog();
         }
 
         private void SettingsForm_Load(object sender, EventArgs e)
@@ -73,6 +97,7 @@ namespace Elevators.Views
             if(openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 ImportSettings?.Invoke(openFileDialog.FileName);
+                SettingsUpdated?.Invoke();
             }
         }
 
@@ -95,15 +120,18 @@ namespace Elevators.Views
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(textBox1.Text, out floors))
-            {
-                MessageBox.Show("ok");
-            };
+            int.TryParse(textBox1.Text, out floors);
             int.TryParse(textBox2.Text, out elevators);
 
-            //int.TryParse(textBox1.Text, out floors);
-            //int.TryParse(textBox2.Text, out elevators);
-            SettingsChanged?.Invoke(floors, elevators);
+            if (floors <= 5 && floors >= 1)
+            {
+                SettingsChanged?.Invoke(floors, elevators);
+            }
+            else
+            {
+                MessageBox.Show("numbers of floors and elevators must be in the range of [1; 5]");
+                textBox1.Text = Convert.ToString(1);
+            }
 
         }
 
@@ -112,10 +140,15 @@ namespace Elevators.Views
             int.TryParse(textBox1.Text, out floors);
             int.TryParse(textBox2.Text, out elevators);
 
-            //Int32.TryParse(textBox1.Text, out floors);
-            //Int32.TryParse(textBox2.Text, out elevators);
-            SettingsChanged?.Invoke(floors, elevators);
-
+            if (elevators <= 5 && elevators >= 1)
+            {
+                SettingsChanged?.Invoke(floors, elevators);
+            }
+            else
+            {
+                MessageBox.Show("numbers of floors and elevators must be in the range of [1; 5]");
+                textBox2.Text = Convert.ToString(1);
+            }
         }
     }
 }

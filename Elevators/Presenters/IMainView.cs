@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ninject;
 using Elevators.Models;
+using Elevators.Models.Repositories;
 
 namespace Elevators.Views
 {
@@ -16,8 +17,14 @@ namespace Elevators.Views
         event Action Stop;
         event Action AddMan;
         event Action MoveUpABit;
+        event Action MoveDownABit;
+
+        void GetSettings(Settings settings);
+        void _AddMan(Man man);
+
         void Show();
         void Close();
         void _MoveUpElevator();
+        void _MoveDownElevator();
     }
 }

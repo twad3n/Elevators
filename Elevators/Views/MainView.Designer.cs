@@ -45,18 +45,23 @@
             this.openSettingsButton = new System.Windows.Forms.Button();
             this.floorIconBase = new System.Windows.Forms.Button();
             this.clickMe = new System.Windows.Forms.Button();
+            this.pictureMan = new System.Windows.Forms.PictureBox();
+            this.dontClickMe = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.elevator)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMan)).BeginInit();
             this.SuspendLayout();
             // 
             // field
             // 
+            this.field.BackColor = System.Drawing.Color.Transparent;
             this.field.Enabled = false;
             this.field.Location = new System.Drawing.Point(119, 94);
             this.field.Margin = new System.Windows.Forms.Padding(2);
             this.field.Name = "field";
             this.field.Size = new System.Drawing.Size(680, 610);
             this.field.TabIndex = 0;
-            this.field.UseVisualStyleBackColor = true;
+            this.field.UseVisualStyleBackColor = false;
+            this.field.Visible = false;
             // 
             // label1
             // 
@@ -198,6 +203,7 @@
             this.elevator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.elevator.TabIndex = 21;
             this.elevator.TabStop = false;
+            this.elevator.Visible = false;
             // 
             // openSettingsButton
             // 
@@ -222,6 +228,7 @@
             this.floorIconBase.TabIndex = 23;
             this.floorIconBase.Text = "1";
             this.floorIconBase.UseVisualStyleBackColor = false;
+            this.floorIconBase.Visible = false;
             // 
             // clickMe
             // 
@@ -229,9 +236,31 @@
             this.clickMe.Name = "clickMe";
             this.clickMe.Size = new System.Drawing.Size(75, 23);
             this.clickMe.TabIndex = 27;
-            this.clickMe.Text = "button7";
+            this.clickMe.Text = "UP";
             this.clickMe.UseVisualStyleBackColor = true;
             this.clickMe.Click += new System.EventHandler(this.clickMe_Click);
+            // 
+            // pictureMan
+            // 
+            this.pictureMan.Image = ((System.Drawing.Image)(resources.GetObject("pictureMan.Image")));
+            this.pictureMan.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureMan.InitialImage")));
+            this.pictureMan.Location = new System.Drawing.Point(37, 36);
+            this.pictureMan.Name = "pictureMan";
+            this.pictureMan.Size = new System.Drawing.Size(100, 50);
+            this.pictureMan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureMan.TabIndex = 28;
+            this.pictureMan.TabStop = false;
+            this.pictureMan.Visible = false;
+            // 
+            // dontClickMe
+            // 
+            this.dontClickMe.Location = new System.Drawing.Point(831, 36);
+            this.dontClickMe.Name = "dontClickMe";
+            this.dontClickMe.Size = new System.Drawing.Size(75, 23);
+            this.dontClickMe.TabIndex = 29;
+            this.dontClickMe.Text = "DOWN";
+            this.dontClickMe.UseVisualStyleBackColor = true;
+            this.dontClickMe.Click += new System.EventHandler(this.dontClickMe_Click);
             // 
             // MainView
             // 
@@ -239,6 +268,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.dontClickMe);
+            this.Controls.Add(this.pictureMan);
             this.Controls.Add(this.clickMe);
             this.Controls.Add(this.floorIconBase);
             this.Controls.Add(this.openSettingsButton);
@@ -260,6 +291,7 @@
             this.Name = "MainView";
             this.Text = "Elevators";
             ((System.ComponentModel.ISupportInitialize)(this.elevator)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,5 +315,7 @@
         private System.Windows.Forms.Button openSettingsButton;
         private System.Windows.Forms.Button floorIconBase;
         private System.Windows.Forms.Button clickMe;
+        private System.Windows.Forms.PictureBox pictureMan;
+        private System.Windows.Forms.Button dontClickMe;
     }
 }

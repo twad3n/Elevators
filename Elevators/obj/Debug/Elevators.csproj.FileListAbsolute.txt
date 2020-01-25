@@ -5,7 +5,6 @@ C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\bin\Debug\Newtonsoft.J
 C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\bin\Debug\Ninject.dll
 C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\bin\Debug\Newtonsoft.Json.xml
 C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\bin\Debug\Ninject.xml
-C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\obj\Debug\Elevators.csprojResolveAssemblyReference.cache
 C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\obj\Debug\Elevators.Views.ScenarioView.resources
 C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\obj\Debug\Elevators.Views.SettingsView.resources
 C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\obj\Debug\Elevators.Views.MainView.resources
@@ -13,3 +12,4 @@ C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\obj\Debug\Elevators.Pr
 C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\obj\Debug\Elevators.csproj.GenerateResource.Cache
 C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\obj\Debug\Elevators.exe
 C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\obj\Debug\Elevators.pdb
+C:\Users\rhode\OneDrive\Desktop\Elevators-finsl\Elevators\obj\Debug\Elevators.csprojResolveAssemblyReference.cache
